@@ -1,0 +1,585 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 6, 2024, 6:56:28 PM
+    Author     : HP
+*/
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;        
+  }
+  /* General reset */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Make sure it fills the viewport */
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the body is at least as tall as the viewport */
+    background-color: #000;
+    color: white; /* Ensures text is visible on a black background */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    
+  }
+  
+  
+  
+  
+  
+  /* Navigation bar styling */
+  .navbar {
+    background-color: #550505;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+  } 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  } 
+  /* Logo styling */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Urbanist';
+    margin-left: -90px;
+    color: white;
+    text-decoration: none;
+    position: relative; /* Ensures pseudo-element positioning works */
+    transition: color 0.3s; /* Smooth hover effect */
+  }
+  .logo a:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+  .logo a::after {
+    content: "|"; /* Adds the vertical bar */
+    color: rgba(255, 255, 255, 0.7); /* Slightly faded color */
+    margin-left: 10px; /* Space between the text and the bar */
+    font-size: 1.5rem; /* Matches the text size */
+    line-height: 1; /* Ensures alignment with the text */
+    vertical-align: top; /* Aligns the bar to the middle of the text */
+    display: inline-block; /* Ensures proper rendering as inline */
+  } 
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 620px;      
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:'Plus Jakarta Sans';
+    
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+  } 
+  /* Search container styling */
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide the checkbox */
+  .search-toggle {
+    display: none;
+  }
+  /* Search icon styling */
+  .search-label {
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;    
+  } 
+  .search-icon {
+    width: 40px;
+    height: 40px;
+    
+    transition: transform 0.3s ease;
+  }
+  .search-label:hover .search-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  } 
+  /* Search input initial state */
+  .search-input {
+    width: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 40px;
+  }
+  
+  /* When the checkbox is checked, expand the search input */
+  .search-toggle:checked ~ .search-input {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.1); /* Add some background for clarity */
+    color:white;/*text color*/
+  }     
+  /* Login container styling */
+  .login-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Add spacing from the search button */
+  } 
+  /* Login link styling */
+  .login-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+  } 
+  /* Login icon styling */
+  .login-icon {
+    width: 40px; /* Set the correct size for the icon */
+    height: 40px;
+    margin-right: -12px; /* Add spacing between icon and text */
+    
+    transition: transform 0.3s ease;
+  } 
+  
+  .login-link:hover .login-icon {
+    transform: scale(1.1); /* Add hover effect for the icon */
+  }
+
+  /* Movie Poster Styling */
+.column {
+  float: right;
+  width: 23.33%;
+  padding: 5px;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 20px;
+  color: white;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.Fighter-Street{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Fighter-Street:active{
+  opacity: 0.7;
+}
+.Fighter-Street:hover{
+  opacity: 0.5;
+}
+
+.Dark-Knight{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Dark-Knight:active{
+  opacity: 0.7;
+}
+.Dark-Knight:hover{
+  opacity: 0.5;
+}
+
+.Amaran{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Amaran:active{
+  opacity: 0.7;
+}
+.Amaran:hover{
+  opacity: 0.5;
+}
+
+.XF{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.XF:active{
+  opacity: 0.7;
+}
+.XF:hover{
+  opacity: 0.5;
+}
+
+.se7en{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.se7en:active{
+  opacity: 0.7;
+}
+.se7en:hover{
+  opacity: 0.5;
+}
+
+.GoodFellas{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.GoodFellas:active{
+  opacity: 0.7;
+}
+.GoodFellas:hover{
+  opacity: 0.5;
+}
+
+.Garfield{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Garfield:active{
+  opacity: 0.7;
+}
+.Garfield:hover{
+  opacity: 0.5;
+}
+
+.Casablanca{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Casablanca:active{
+  opacity: 0.7;
+}
+.Casablanca:hover{
+  opacity: 0.5;
+}
+
+.Top-Gun{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Top-Gun:active{
+  opacity: 0.7;
+}
+.Top-Gun:hover{
+  opacity: 0.5;
+}
+
+.Joker{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Joker:active{
+  opacity: 0.7;
+}
+.Joker:hover{
+  opacity: 0.5;
+}
+
+.Passport{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Passport:active{
+  opacity: 0.7;
+}
+.Passport:hover{
+  opacity: 0.5;
+}
+
+.Spider-man{
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.Spider-man:active{
+  opacity: 0.7;
+}
+.Spider-man:hover{
+  opacity: 0.5;
+}
+
+/* Streaming Section */
+  .streaming-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: rgb(189,1,1);
+    background: linear-gradient(159deg, rgba(189,1,1,0.9711922610841212) 4%, rgba(56,2,2,1) 44%, rgba(0,0,0,1) 81%);
+    border-radius: 30px; /* Rounded corners */
+    margin: 2rem auto; /* Space above and below */
+    width: 1296px; /* Adjust width (e.g., 90% of the page width) */
+   
+    height: 254px; 
+    color: white; 
+  }
+  
+  .streaming-content h2 {
+    font-size: 3rem; /* Large font size */
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans';
+  }
+  .streaming-button .btn-red {
+    background-color: #F80202; /* Bright red button */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Plus Jakarta Sans';
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 50px; /* Fully rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .streaming-button .btn-red:hover {
+    background-color: #d62828; /* Darker red on hover */
+    transform: scale(1.2); /* Slight zoom on hover */
+  }
+  
+/* Footer Styling */
+  footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #000; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  .footer {
+    background-color: #000; /* Dark background */
+    color: white; /* White text */
+    padding: 2rem 1rem; /* Spacing around footer */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+    gap: 2rem; /* Space between sections */
+  }
+  
+  /* Footer Main Section */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space out brand and icons */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -90px;
+    font-family:'Urbanist';
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-brand:hover {
+    color: #f4a261; /* Highlight color on hover */
+    transform: scale(1.2);
+  }
+  /* Social Media Icons */
+  .footer-icons {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center-align icons */
+    gap: 1rem; /* Space between icons */
+  }
+  
+  .social-icon img {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.3s, filter 0.3s; /* Smooth hover animation */
+  }
+  
+  .social-icon:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Add brightness effect */
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 30rem; /* Space between items */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-right: 25px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: white; /* Slightly faded white */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .footer-link:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-right: 0; /* Reset margin */
+    }
+  
+    .logo a {
+      font-size: 1.2rem; /* Adjust logo size */
+    }
+  
+    /* Streaming Section adjustments */
+    .streaming-section {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem;
+      height: auto; /* Let height adjust automatically */
+    }
+  
+    .streaming-content h2 {
+      font-size: 2rem;
+    }
+  
+    .streaming-button .btn-red {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    /* Footer adjustments */
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      margin-right: 0;
+    }
+  
+    .footer-link {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /*Movie body responsive*/
+.column {
+  float: right;
+  width: 23.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.Fighter-Street, .Dark-Knight, .Amaran, .XF, .se7en, .GoodFellas, .Garfield, .Casablanca, .Top-Gun, 
+.Joker, .Passport, .Spider-man {
+  height: 300px;
+  width: 200px;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+
+.Fighter-Street:active, .Dark-Knight:active, .Amaran:active, .XF:active, .se7en:active, 
+.GoodFellas:active, .Garfield:active, .Casablanca:active, .Top-Gun:active, .Joker:active, .Passport:active, 
+.Spider-man:active {
+  opacity: 0.7;
+}
+
+.Fighter-Street:hover, .Dark-Knight:hover, .Amaran:hover, .XF:hover, .se7en:hover, .GoodFellas:hover, 
+.Garfield:hover, .Casablanca:hover, .Top-Gun:hover, .Joker:hover, .Passport:hover, .Spider-man:hover {
+  opacity: 0.5;
+}
+
+/* Responsive design for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .column {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+
+  .Fighter-Street, .Dark-Knight, .Amaran, .XF, .se7en, .GoodFellas, .Garfield, .Casablanca, .Top-Gun, 
+  .Joker, .Passport, .Spider-man {
+    width: 100%;
+    height: auto; /* Adjust height for mobile view */
+  }
+}

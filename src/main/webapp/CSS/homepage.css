@@ -1,0 +1,932 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 6, 2024, 1:08:37 PM
+    Author     : nadee
+*/
+
+
+
+/* General reset */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;        
+  }
+  /* General reset */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Make sure it fills the viewport */
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the body is at least as tall as the viewport */
+    background-color: #000;
+    color: white; /* Ensures text is visible on a black background */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    
+  }
+  
+  
+  
+  
+  
+  /* Navigation bar styling */
+  .navbar {
+    background-color: #550505;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+  } 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  } 
+  /* Logo styling */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Urbanist';
+    margin-left: -90px;
+    color: white;
+    text-decoration: none;
+    position: relative; /* Ensures pseudo-element positioning works */
+    transition: color 0.3s; /* Smooth hover effect */
+  }
+  .logo a:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+  .logo a::after {
+    content: "|"; /* Adds the vertical bar */
+    color: rgba(255, 255, 255, 0.7); /* Slightly faded color */
+    margin-left: 10px; /* Space between the text and the bar */
+    font-size: 1.5rem; /* Matches the text size */
+    line-height: 1; /* Ensures alignment with the text */
+    vertical-align: top; /* Aligns the bar to the middle of the text */
+    display: inline-block; /* Ensures proper rendering as inline */
+  } 
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 620px;      
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:'Plus Jakarta Sans';
+    
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+  } 
+  /* Search container styling */
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide the checkbox */
+  .search-toggle {
+    display: none;
+  }
+  /* Search icon styling */
+  .search-label {
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;    
+  } 
+  .search-icon {
+    width: 40px;
+    height: 40px;
+    
+    transition: transform 0.3s ease;
+  }
+  .search-label:hover .search-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  } 
+  /* Search input initial state */
+  .search-input {
+    width: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 40px;
+  }
+  
+  /* When the checkbox is checked, expand the search input */
+  .search-toggle:checked ~ .search-input {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.1); /* Add some background for clarity */
+    color:white;/*text color*/
+  }     
+  /* Login container styling */
+  .login-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Add spacing from the search button */
+  } 
+  /* Login link styling */
+  .login-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+  } 
+  /* Login icon styling */
+  .login-icon {
+    width: 40px; /* Set the correct size for the icon */
+    height: 40px;
+    margin-right: -12px; /* Add spacing between icon and text */
+    
+    transition: transform 0.3s ease;
+  } 
+  
+  .login-link:hover .login-icon {
+    transform: scale(1.1); /* Add hover effect for the icon */
+  }
+
+
+
+
+
+
+
+
+
+/* Hero Section Styling */
+.hero-section {
+  padding: 34px 60px; /* Add padding for spacing */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:auto;
+  max-width: 1406px; /* Slightly increase width */
+  background: rgb(0,0,0);
+background: linear-gradient(135deg, rgba(0,0,0,0.9711922610841212) 36%, rgba(101,8,8,1) 59%, rgba(56,4,4,1) 77%, rgba(96,89,89,1) 94%);
+  margin: 0 auto; /* Center horizontally */
+  height: 84%; /* Adjust height for a compact section */
+  
+ 
+}
+
+
+.hero-content {
+  max-width: 50%;
+  margin: 0; /* Remove extra margins */
+}
+
+/* Adjust text in the hero section */
+.hero-content h4 {
+  font-size: 1.7rem; /* Smaller subheading */
+  margin-bottom: 5px;
+  font-family: 'Plus Jakarta Sans';
+}
+
+
+.hero-content h1 {
+  font-size: 4rem; /* Reduced main heading */
+  margin-bottom: 10px;
+  font-family: 'Plus Jakarta Sans';
+}
+
+.hero-content p {
+  font-size: 1rem; /* Smaller paragraph text */
+  margin-bottom: 15px;
+  font-family: 'Plus Jakarta Sans';
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 45px;
+  
+}
+
+/* Adjust button sizes */
+.hero-buttons .btn {
+  font-size: 1rem; /* Reduce button text size */
+  padding: 10px 20px; /* Reduce button size */
+  margin-right: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans';
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+
+  
+  
+  
+}
+
+
+.hero-buttons .btn-primary {
+  background-color: #F80202;
+  color: white;
+  border: none; /* Remove border */
+  width: 95px; /* Width for View button */
+    height: 20px; /* Height for View button */
+    line-height: 20px; /* Match text alignment to height */
+    
+  
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #b40810;
+  transform: scale(1.2); /* Grows button by 10% */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.hero-buttons .btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  width: 100px; /* Width for Book Ticket button */
+  height: 20px; /* Height for Book Ticket button */
+  line-height: 20px; /* Match text alignment to height */
+  
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: #b40810;
+  color: white;
+  transform: scale(1.2); /* Grows button by 10% */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Carousel Styling */
+.hero-carousel {
+  max-width: 634px; /* Increase width slightly for balance */
+  height: 620px; /* Match the section's height */
+  position: relative;
+  
+}
+
+.carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%; /* Matches the width of the hero-carousel */
+  height: 100%; /* Constrain the height to fit the section */
+  position: relative;
+  
+  
+}
+
+.carousel-item {
+  min-width: 100%; /* Ensure each item takes up the full carousel width */
+  height: 100%; /* Match the height of the carousel-wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+  width: 100%; /* Fit the width of the carousel */
+  height: 100%; /* Fit the height of the carousel */
+  object-fit: cover; /* Ensure the image scales proportionally */
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.carousel-controls {
+  position: absolute;
+  left: 15px;
+  top: 50%; /* Center vertically */
+  width: 95%; /* Span the entire width of the carousel */ 
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 2; /* Ensure buttons appear above images */
+  
+}
+
+.carousel-control { 
+  border: none;
+  color: #FF0000; /* Button text color */
+  width: 40px; /* Set equal width */
+  height: 40px; /* Set equal height */
+  display: flex; /* Use flexbox to center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 24px; /* Icon size */
+  cursor: pointer;
+  border-radius: 50%; /* Make the button circular */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color:white
+  
+  
+}
+.carousel-control:hover {
+  transform: scale(1.1); /* Grow on hover (20% increase) */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/* Movie Section */
+.movie-gallery {
+  position: relative;
+  padding: 40px;/* More padding for extra space */
+  
+  color: white;
+  text-align: center;
+  min-height: 650px; /* Set a minimum height if needed */
+  height: auto; 
+  
+}
+
+.movie-title {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.movie-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.movie-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  margin: 0; /* Ensure no unwanted margins */
+padding: 0; /* Remove any padding */
+
+
+  
+}
+
+.movie-item {
+  flex: 0 0 24.2%; /* 4 items visible */
+  width:350px ;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  position: relative;
+  margin: 0 5px;/* Adjust spacing between items */
+  overflow: hidden;/* Ensures images or overlays don't overflow the container */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for visual appeal */
+  
+}
+.movie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+  border-radius: 10px; /* Optional: adds rounded corners to the images */
+}
+
+/* Movie Name Styling */
+.movie-name {
+  margin-top: 50px;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 20px;
+  color: white;
+  opacity: 0; /* Hidden by default */
+  transform: translateY(10px); /* Position slightly below */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  text-align: center; /* Center the text under the button */
+}
+.release-date {
+  margin-top: 5px; /* Adjust space between the name and release date */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; /* Slightly smaller than the movie name */
+  color: white; /* Light gray color for contrast */
+  opacity: 0; /* Hidden by default */
+  transform: translateY(10px); /* Positioned slightly below */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+
+/* Show movie name and release date on hover */
+.movie-item:hover .movie-name,
+.movie-item:hover .release-date {
+opacity: 1; /* Make visible */
+transform: translateY(0); /* Move to the final position */
+}
+
+/* Hover Overlay Styling */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  opacity: 0;
+  display: flex;
+  flex-direction: column; /* Stack button and movie name */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.movie-item .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  
+}
+
+.movie-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.watch-trailer-btn {
+  background-color: #F80202;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family:'Plus Jakarta Sans';
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth grow effect */
+}
+.watch-trailer-btn:hover {
+  transform: scale(1.1); /* Makes the button 10% larger */
+  background-color: darkred; 
+}
+
+
+/* Adjusted button positions */
+.movie-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.slider-btn {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: rgba(255, 0, 0, 0.7);
+  border: none;
+  color: #F80202;
+  background-color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex; /* Use flexbox to center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 40px; /* Set equal width */
+  height: 40px; /* Set equal height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth growth */
+}
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.2); /* Grow button */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+}
+
+.left-btn {
+  left: 5px;
+}
+
+.right-btn {
+  right: 5px;
+}
+
+
+
+
+  
+  /* Streaming Section */
+  .streaming-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: rgb(189,1,1);
+    background: linear-gradient(159deg, rgba(189,1,1,0.9711922610841212) 4%, rgba(56,2,2,1) 44%, rgba(0,0,0,1) 81%);
+    border-radius: 30px; /* Rounded corners */
+    margin: 2rem auto; /* Space above and below */
+    width: 1296px; /* Adjust width (e.g., 90% of the page width) */
+   
+    height: 254px; 
+    color: white; 
+  }
+  
+  .streaming-content h2 {
+    font-size: 3rem; /* Large font size */
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans';
+  }
+  .streaming-button .btn-red {
+    background-color: #F80202; /* Bright red button */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Plus Jakarta Sans';
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 50px; /* Fully rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .streaming-button .btn-red:hover {
+    background-color: #d62828; /* Darker red on hover */
+    transform: scale(1.2); /* Slight zoom on hover */
+  }
+  
+  
+  
+  
+  
+  
+ 
+  /* Footer Styling */
+  footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #000; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  .footer {
+    background-color: #000; /* Dark background */
+    color: white; /* White text */
+    padding: 2rem 1rem; /* Spacing around footer */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+    gap: 2rem; /* Space between sections */
+  }
+  
+  /* Footer Main Section */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space out brand and icons */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -90px;
+    font-family:'Urbanist';
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-brand:hover {
+    color: #f4a261; /* Highlight color on hover */
+    transform: scale(1.2);
+  }
+  /* Social Media Icons */
+  .footer-icons {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center-align icons */
+    gap: 1rem; /* Space between icons */
+  }
+  
+  .social-icon img {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.3s, filter 0.3s; /* Smooth hover animation */
+  }
+  
+  .social-icon:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Add brightness effect */
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 30rem; /* Space between items */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-right: 25px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: white; /* Slightly faded white */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .footer-link:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+
+
+
+
+/*navigation bar,footer,streaming section responsive*/
+
+  @media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-right: 0; /* Reset margin */
+    }
+  
+    .logo a {
+      font-size: 1.2rem; /* Adjust logo size */
+    }
+  
+    /* Streaming Section adjustments */
+    .streaming-section {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding: 1rem;
+      height: auto; /* Let height adjust automatically */
+    }
+  
+    .streaming-content h2 {
+      font-size: 2rem;
+    }
+  
+    .streaming-button .btn-red {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    /* Footer adjustments */
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      margin-right: 0;
+    }
+  
+    .footer-link {
+      font-size: 0.8rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /*homepage body responsive*/
+ 
+  @media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center-align content */
+      padding: 20px; /* Adjust padding */
+      height: auto; /* Let height adjust automatically */
+    }
+  
+    .hero-content {
+      max-width: 90%; /* Allow text to fit better */
+      text-align: center; /* Center-align text */
+      margin-bottom: 20px; /* Add spacing below content */
+    }
+  
+    .hero-content h4 {
+      font-size: 1.5rem; /* Adjust subheading size */
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem; /* Reduce main heading size */
+    }
+  
+    .hero-content p {
+      font-size: 0.9rem; /* Adjust paragraph text size */
+    }
+  
+    .hero-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 10px; /* Reduce spacing between buttons */
+    }
+  
+    .hero-buttons .btn {
+      font-size: 0.9rem; /* Adjust button text size */
+      padding: 8px 15px; /* Reduce button padding */
+    }
+  
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+      width: auto; /* Allow buttons to fit content */
+      height: auto; /* Adjust height */
+      line-height: normal; /* Adjust line-height */
+    }
+  
+    /* Carousel */
+    .hero-carousel {
+      max-width: 100%; /* Allow carousel to span full width */
+      height: auto; /* Adjust height */
+    }
+  
+    .carousel-wrapper {
+      flex-direction: column; /* Stack items vertically if needed */
+    }
+  
+    .carousel-item img {
+      border-radius: 0; /* Remove rounded corners for better fit */
+    }
+  
+    .carousel-controls {
+      width: 100%; /* Ensure controls span the full width */
+      left: 0; /* Align to the edges */
+    }
+  
+    .carousel-control {
+      width: 35px; /* Adjust size of control buttons */
+      height: 35px;
+      font-size: 20px; /* Adjust icon size */
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Movie Gallery */
+    .movie-gallery {
+      padding: 20px; /* Reduce padding */
+      text-align: center; /* Ensure proper alignment */
+      min-height: auto; /* Allow height to adjust dynamically */
+    }
+  
+    .movie-title {
+      font-size: 2rem; /* Adjust title size */
+      margin-bottom: 15px; /* Reduce spacing */
+    }
+  
+    /* Movie Slider */
+    .movie-slider {
+      overflow-x: scroll; /* Enable horizontal scrolling */
+      display: flex; /* Ensure items stay in a row */
+      gap: 10px; /* Adjust spacing between movie items */
+    }
+  
+    .movie-track {
+      flex-wrap: nowrap; /* Prevent items from wrapping */
+    }
+  
+    .movie-item {
+      flex: 0 0 45%; /* Show 2 items per row */
+      margin: 0 5px; /* Reduce margins */
+      height: auto; /* Allow height to adjust dynamically */
+      width: 100%; /* Let items fill available space */
+    }
+  
+    .movie-item img {
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Keep rounded corners */
+    }
+  
+    .movie-name,
+    .release-date {
+      font-size: 0.9rem; /* Adjust font size */
+      margin-top: 10px; /* Reduce spacing */
+    }
+  
+    /* Hover Overlay */
+    .hover-overlay {
+      flex-direction: column; /* Stack content */
+      justify-content: center; /* Center-align content */
+      align-items: center; /* Center-align items */
+      padding: 10px; /* Adjust padding */
+    }
+  
+    .watch-trailer-btn {
+      font-size: 0.9rem; /* Reduce button text size */
+      padding: 8px 16px; /* Adjust padding */
+    }
+  
+    /* Slider Controls */
+    .movie-slider-controls {
+      flex-direction: column; /* Stack controls vertically */
+      align-items: center; /* Center-align controls */
+      margin-top: 10px; /* Adjust spacing */
+    }
+  
+    .slider-btn {
+      width: 35px; /* Adjust button size */
+      height: 35px;
+      font-size: 20px; /* Adjust icon size */
+      padding: 8px; /* Adjust padding */
+    }
+  
+    .left-btn {
+      left: 10px; /* Adjust positioning */
+    }
+  
+    .right-btn {
+      right: 10px; /* Adjust positioning */
+    }
+  }
+
+
+
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,457 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 7, 2024, 9:34:10 AM
+    Author     : nadee
+*/
+
+/* General reset */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;        
+  }
+  /* General reset */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Make sure it fills the viewport */
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the body is at least as tall as the viewport */
+    background-color: #000;
+    color: white; /* Ensures text is visible on a black background */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    
+  }
+  
+  
+  
+  
+  
+  /* Navigation bar styling */
+  .navbar {
+    background-color: #550505;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    
+  } 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  } 
+  /* Logo styling */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Urbanist';
+    margin-left: -90px;
+    color: white;
+    text-decoration: none;
+    position: relative; /* Ensures pseudo-element positioning works */
+    transition: color 0.3s; /* Smooth hover effect */
+    
+   
+  }
+  .logo a:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+  .logo a::after {
+    content: "|"; /* Adds the vertical bar */
+    color: rgba(255, 255, 255, 0.7); /* Slightly faded color */
+    margin-left: 10px; /* Space between the text and the bar */
+    font-size: 1.5rem; /* Matches the text size */
+    line-height: 1; /* Ensures alignment with the text */
+    vertical-align: top; /* Aligns the bar to the middle of the text */
+    display: inline-block; /* Ensures proper rendering as inline */
+  } 
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 620px;  
+      
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:'Plus Jakarta Sans';
+    
+    font-weight: 500;
+    transition: color 0.3s;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+  }
+  
+  .nav-links a:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+    
+  } 
+  /* Search container styling */
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide the checkbox */
+  .search-toggle {
+    display: none;
+  }
+  /* Search icon styling */
+  .search-label {
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;    
+  } 
+  .search-icon {
+    width: 40px;
+    height: 40px;
+    
+    transition: transform 0.3s ease;
+  }
+  .search-label:hover .search-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  } 
+  /* Search input initial state */
+  .search-input {
+    width: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 40px;
+  }
+  
+  /* When the checkbox is checked, expand the search input */
+  .search-toggle:checked ~ .search-input {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.1); /* Add some background for clarity */
+    color:white;/*text color*/
+  }     
+  /* Login container styling */
+  .login-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Add spacing from the search button */
+  } 
+  /* Login link styling */
+  .login-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+  } 
+  /* Login icon styling */
+  .login-icon {
+    width: 40px; /* Set the correct size for the icon */
+    height: 40px;
+    margin-right: -12px; /* Add spacing between icon and text */
+    
+    transition: transform 0.3s ease;
+  } 
+  
+  .login-link:hover .login-icon {
+    transform: scale(1.1); /* Add hover effect for the icon */
+  }
+
+  
+
+
+
+
+
+/* Login Form Styling */
+.Loginpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Center form vertically */
+    background-color: #000; /* Match existing background */
+    color: white;
+}
+.admin-heading {
+    word-spacing: 10px; /* Adjust the spacing as needed */
+}
+
+.login-form {
+    background-color: #1a1a1a;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    font-family: 'Plus Jakarta Sans';
+    margin-bottom: 20px;
+    
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+}
+
+.input-field {
+    font-family: 'Plus Jakarta Sans';
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.login-button {
+    font-family: 'Plus Jakarta Sans';
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F80202;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.login-button:hover {
+    background-color: #f4a261;
+}
+
+.error-message {
+    color: #F80202;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Footer Styling */
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #000; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  .footer {
+    background-color: #000; /* Dark background */
+    color: white; /* White text */
+    padding: 2rem 1rem; /* Spacing around footer */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+    gap: 2rem; /* Space between sections */
+  }
+  
+  /* Footer Main Section */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space out brand and icons */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -90px;
+    font-family:'Urbanist';
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-brand:hover {
+    color: #f4a261; /* Highlight color on hover */
+    transform: scale(1.2);
+  }
+  /* Social Media Icons */
+  .footer-icons {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center-align icons */
+    gap: 1rem; /* Space between icons */
+  }
+  
+  .social-icon img {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.3s, filter 0.3s; /* Smooth hover animation */
+  }
+  
+  .social-icon:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Add brightness effect */
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 30rem; /* Space between items */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-right: 25px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: white; /* Slightly faded white */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .footer-link:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+
+  
+
+  @media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-right: 0; /* Reset margin */
+    }
+  
+    .logo a {
+      font-size: 1.2rem; /* Adjust logo size */
+    }
+    /* Footer adjustments */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+}
+/*login form responsive*/
+@media (max-width: 768px) {
+  .Loginpage {
+    height: auto; /* Allow content to adjust height on smaller screens */
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  .login-form {
+    width: 90%; /* Adjust form width to fit smaller screens */
+    max-width: none; /* Remove the fixed max-width constraint */
+    padding: 15px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem; /* Reduce font size for the heading */
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Reduce spacing between form fields */
+  }
+
+  .form-group label {
+    font-size: 12px; /* Reduce label font size */
+  }
+
+  .input-field {
+    font-size: 14px; /* Reduce input font size */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .login-button {
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px; /* Adjust button padding */
+    border-radius: 8px; /* Slightly smaller border radius */
+  }
+
+  .error-message {
+    font-size: 12px; /* Reduce error message font size */
+  }
+}

@@ -1,0 +1,431 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 6, 2024, 8:29:23 PM
+    Author     : user
+*/
+/* General reset */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;        
+  }
+  /* General reset */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Make sure it fills the viewport */
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the body is at least as tall as the viewport */
+    background-color: #000;
+    color: white; /* Ensures text is visible on a black background */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    
+  }
+  
+  
+  
+  
+
+  /* Navigation bar styling */
+  .navbar {
+    background-color: #550505;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+  } 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  } 
+  /* Logo styling */
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Urbanist';
+    margin-left: -90px;
+    color: white;
+    text-decoration: none;
+    position: relative; /* Ensures pseudo-element positioning works */
+    transition: color 0.3s; /* Smooth hover effect */
+  }
+  .logo a:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+  .logo a::after {
+    content: "|"; /* Adds the vertical bar */
+    color: rgba(255, 255, 255, 0.7); /* Slightly faded color */
+    margin-left: 10px; /* Space between the text and the bar */
+    font-size: 1.5rem; /* Matches the text size */
+    line-height: 1; /* Ensures alignment with the text */
+    vertical-align: top; /* Aligns the bar to the middle of the text */
+    display: inline-block; /* Ensures proper rendering as inline */
+  } 
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 620px;      
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:'Plus Jakarta Sans';
+    
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+  } 
+  /* Search container styling */
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide the checkbox */
+  .search-toggle {
+    display: none;
+  }
+  /* Search icon styling */
+  .search-label {
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;    
+  } 
+  .search-icon {
+    width: 40px;
+    height: 40px;
+    
+    transition: transform 0.3s ease;
+  }
+  .search-label:hover .search-icon {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  } 
+  /* Search input initial state */
+  .search-input {
+    width: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 40px;
+  }
+  
+  /* When the checkbox is checked, expand the search input */
+  .search-toggle:checked ~ .search-input {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.1); /* Add some background for clarity */
+    color:white;/*text color*/
+  }     
+  /* Login container styling */
+  .login-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Add spacing from the search button */
+  } 
+  /* Login link styling */
+  .login-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+  } 
+  /* Login icon styling */
+  .login-icon {
+    width: 40px; /* Set the correct size for the icon */
+    height: 40px;
+    margin-right: -12px; /* Add spacing between icon and text */
+    
+    transition: transform 0.3s ease;
+  } 
+  
+  .login-link:hover .login-icon {
+    transform: scale(1.1); /* Add hover effect for the icon */
+  }
+  
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.about-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.video-thumbnail {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.vision-mission {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.vision, .mission {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+p {
+    margin: 0;
+}
+/* Footer Styling */
+  footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #000; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  .footer {
+    background-color: #000; /* Dark background */
+    color: white; /* White text */
+    padding: 2rem 1rem; /* Spacing around footer */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align content */
+    gap: 2rem; /* Space between sections */
+  }
+  
+  /* Footer Main Section */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space out brand and icons */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: -90px;
+    font-family:'Urbanist';
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer-brand:hover {
+    color: #f4a261; /* Highlight color on hover */
+    transform: scale(1.2);
+  }
+  /* Social Media Icons */
+  .footer-icons {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center-align icons */
+    gap: 1rem; /* Space between icons */
+  }
+  
+  .social-icon img {
+    width: 37px;
+    height: 37px;
+    transition: transform 0.3s, filter 0.3s; /* Smooth hover animation */
+  }
+  
+  .social-icon:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Add brightness effect */
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center-align items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 30rem; /* Space between items */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-right: 25px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: white; /* Slightly faded white */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .footer-link:hover {
+    color: #f4a261; /* Highlight color on hover */
+  }
+
+
+
+
+/*navigation bar,footer,streaming section responsive*/
+
+  @media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-right: 0; /* Reset margin */
+    }
+  
+    .logo a {
+      font-size: 1.2rem; /* Adjust logo size */
+    }
+    /* Footer adjustments */
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      margin-right: 0;
+    }
+  
+    .footer-link {
+      font-size: 0.8rem;
+    }
+  }
+  
+    @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .content-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .video-thumbnail {
+        max-height: 200px;
+        border-radius: 5px;
+    }
+
+    .play-button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .vision-mission {
+        gap: 15px;
+    }
+
+    .vision, .mission {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+}
+
+
