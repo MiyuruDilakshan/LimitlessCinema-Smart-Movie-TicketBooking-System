@@ -192,7 +192,7 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 git clone https://github.com/MiyuruDilakshan/LimitlessCinema-Smart-Movie-TicketBooking-System.git
-cd MovieTicketBooking
+cd LimitlessCinema-Smart-Movie-TicketBooking-System
 ```
 
 #### 2️⃣ Database Setup
@@ -326,12 +326,12 @@ startup.bat   # Windows
 
 Open your browser and navigate to:
 ```
-http://localhost:8080/MovieTicketBooking/homepage.jsp
+http://localhost:8080/LimitlessCinema-Smart-Movie-TicketBooking-System/homepage.jsp
 ```
 
 Admin Panel:
 ```
-http://localhost:8080/MovieTicketBooking/admin_login.jsp
+http://localhost:8080/LimitlessCinema-Smart-Movie-TicketBooking-System/admin_login.jsp
 ```
 
 ---
@@ -339,7 +339,7 @@ http://localhost:8080/MovieTicketBooking/admin_login.jsp
 ## 📂 Project Structure
 
 ```
-MovieTicketBooking/
+LimitlessCinema-Smart-Movie-TicketBooking-System/
 ├── pom.xml                          # Maven configuration
 ├── src/
 │   └── main/
